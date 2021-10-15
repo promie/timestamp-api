@@ -1,7 +1,12 @@
-import pino from 'pino'
+const pino = require('pino')
 
 const Logger = pino({
-  prettyPrint: { colorize: true },
+  transport: {
+    target: 'pino-pretty',
+    options: {
+      colorize: true
+    }
+  }
 })
 
 export default Logger
