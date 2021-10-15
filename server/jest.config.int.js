@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   roots: ['<rootDir>'],
   testMatch: ['**/?(*.)+(int.test).+(ts)'],
   transform: {
