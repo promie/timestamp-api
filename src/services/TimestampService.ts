@@ -1,22 +1,21 @@
-import * as moment from 'moment'
+import moment from 'moment'
 
 const isNumber = (n: string): boolean => {
   return /^-?[\d.]+(?:e-?\d+)?$/.test(n)
 }
 
 const conversion = (date: string) => {
-  // returned object
-  // {"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}
-  // If the date input is blank return an object of the current date and time
-
-  // Check if the input is a number
   if (isNumber(date)) {
-    // This is a unix number
-    const isValid = moment(parseInt(date)).isValid()
+    const unixTime = parseInt(date)
 
-    console.log('isValid', isValid)
+    const isValid = moment(unixTime).isValid()
 
-    console.log('I AM IN EPOCH NUMBER')
+    if(isValid) {
+      return {
+        unix: unixTime,
+        utc: `${moment.utc(unixTime).format('ddd, DD MMM YYYY HH:mm:ss')} GMT`
+      }
+    }
   } else {
     // treat it as a date string
   }
