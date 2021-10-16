@@ -3,7 +3,7 @@ import TimestampService from '../TimestampService'
 describe('TimestampService', () => {
   describe('#getTimestampByDate', () => {
     it(
-      'returns the an object that contains the correct the unix and utc values ' +
+      'returns an object that contains the correct the unix and utc values ' +
         'if a correct unix time is passed in',
       () => {
         const date = '1451001600000'
