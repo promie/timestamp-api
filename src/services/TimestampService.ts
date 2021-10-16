@@ -10,10 +10,10 @@ const conversion = (date: string) => {
 
     const isValid = moment(unixTime).isValid()
 
-    if(isValid) {
+    if (isValid) {
       return {
         unix: unixTime,
-        utc: `${moment.utc(unixTime).format('ddd, DD MMM YYYY HH:mm:ss')} GMT`
+        utc: `${moment.utc(unixTime).format('ddd, DD MMM YYYY HH:mm:ss')} GMT`,
       }
     }
   } else {
