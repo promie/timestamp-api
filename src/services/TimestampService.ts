@@ -4,7 +4,7 @@ const isNumber = (n: string): boolean => {
   return /^-?[\d.]+(?:e-?\d+)?$/.test(n)
 }
 
-const conversion = (date: string) => {
+const getTimestampByDate = (date: string) => {
   if (isNumber(date)) {
     const unixTime = parseInt(date)
 
@@ -24,5 +24,5 @@ const conversion = (date: string) => {
 }
 
 export default {
-  conversion,
+  getTimestampByDate,
 }
