@@ -3,7 +3,6 @@ const isNumber = (n: string): boolean => {
 }
 
 const getTimestampByDate = (dateInput: string) => {
-
   let dateParam: string | number
 
   if (isNumber(dateInput)) {
@@ -13,10 +12,8 @@ const getTimestampByDate = (dateInput: string) => {
 
     return {
       unix: date.valueOf(),
-      utc: date.toUTCString()
+      utc: date.toUTCString(),
     }
-  } else {
-    // treat it as a date string
   }
 
   return dateInput
