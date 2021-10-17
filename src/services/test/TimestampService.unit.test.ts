@@ -61,5 +61,15 @@ describe('TimestampService', () => {
         })
       })
     })
+
+    describe('invalid date', () => {
+      it('returns an object with an Invalid date if an invalid date is used as an input', () => {
+        const date = 'helloworld'
+
+        expect(TimestampService.getTimestampByDate(date)).toEqual({
+          error: 'Invalid Date',
+        })
+      })
+    })
   })
 })

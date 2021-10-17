@@ -22,6 +22,12 @@ const getTimestampByDate = (dateInput: string) => {
 
   date = new Date(dateInput)
 
+  if (date.toString() === 'Invalid Date') {
+    return {
+      error: 'Invalid Date',
+    }
+  }
+
   return {
     unix: date.valueOf(),
     utc: date.toUTCString(),
