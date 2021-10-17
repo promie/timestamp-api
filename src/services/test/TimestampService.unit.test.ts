@@ -3,7 +3,7 @@ import TimestampService from '../TimestampService'
 describe('TimestampService', () => {
   describe('#getTimestampByDate', () => {
     describe('timestamp in milliseconds', () => {
-      it('returns an object that contains the correct unix and utc values - Fri, 25 Dec 2015', () => {
+      it('returns an object that contains the correct unix in (milliseconds) and utc values - Fri, 25 Dec 2015', () => {
         const date = '1451001600000'
 
         expect(TimestampService.getTimestampByDate(date)).toEqual({
@@ -12,7 +12,7 @@ describe('TimestampService', () => {
         })
       })
 
-      it('returns an object that contains the correct unix and utc values - Thu, 07 Aug 1986', () => {
+      it('returns an object that contains the correct unix in (milliseconds) and utc values - Thu, 07 Aug 1986', () => {
         const date = '523756800000'
 
         expect(TimestampService.getTimestampByDate(date)).toEqual({
@@ -22,8 +22,8 @@ describe('TimestampService', () => {
       })
     })
 
-    describe('epoch timestamp', () => {
-      it('returns an object that contains the correct unix and utc values - Fri, 25 Dec 2015', () => {
+    describe('epoch timestamp (in seconds)', () => {
+      it('returns an object that contains the correct unix in (milliseconds) and utc values - Fri, 25 Dec 2015', () => {
         const date = '1451001600'
 
         expect(TimestampService.getTimestampByDate(date)).toEqual({
