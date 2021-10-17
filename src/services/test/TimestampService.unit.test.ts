@@ -51,6 +51,15 @@ describe('TimestampService', () => {
           utc: 'Fri, 25 Dec 2015 00:00:00 GMT',
         })
       })
+
+      it('converts the correct date string and returns an object that contains the correct unix in (milliseconds) and utc values', () => {
+        const date = '1986-08-07'
+
+        expect(TimestampService.getTimestampByDate(date)).toEqual({
+          unix: 523756800000,
+          utc: 'Thu, 07 Aug 1986 00:00:00 GMT',
+        })
+      })
     })
   })
 })
