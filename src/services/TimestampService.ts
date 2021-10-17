@@ -1,6 +1,4 @@
-const isNumber = (n: string): boolean => {
-  return /^-?[\d.]+(?:e-?\d+)?$/.test(n)
-}
+import { isNumber } from '../helpers'
 
 const getTimestampByDate = (dateInput: string) => {
   let dateParam: string | number
