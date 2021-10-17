@@ -4,13 +4,15 @@ const isNumber = (n: string): boolean => {
 
 const getTimestampByDate = (dateInput: string) => {
   let dateParam: string | number
+  let date: Date
 
   if (isNumber(dateInput)) {
     dateParam = parseInt(dateInput)
 
     // if the length of the date input is less than or equal to 10 - the epoch is in seconds
     // otherwise in milliseconds
-    const date = dateInput.length <= 10 ? new Date(dateParam * 1000) : new Date(dateParam)
+    date =
+      dateInput.length <= 10 ? new Date(dateParam * 1000) : new Date(dateParam)
 
     return {
       unix: date.valueOf(),
@@ -18,7 +20,12 @@ const getTimestampByDate = (dateInput: string) => {
     }
   }
 
-  return dateInput
+  date = new Date(dateInput)
+
+  return {
+    unix: date.valueOf(),
+    utc: date.toUTCString(),
+  }
 }
 
 export default {
