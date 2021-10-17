@@ -1,6 +1,7 @@
 import { isNumber } from '../helpers'
+import { ITimestamp } from '../types/timestamp'
 
-const getTimestampByDate = (dateInput: string) => {
+const getTimestampByDate = (dateInput: string): ITimestamp => {
   let dateParam: string | number
   let date: Date
 
