@@ -7,7 +7,8 @@ const app: Application = express()
 
 app.use(express.json())
 app.use(cors())
-app.use(TimestampRoute)
+
+app.use('/api/v1/timestamps', TimestampRoute)
 
 // Handling Unhandled Routes
 app.all('*', (req: Request, res: Response, _next: NextFunction) => {
