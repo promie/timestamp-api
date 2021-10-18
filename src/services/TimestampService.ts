@@ -1,6 +1,14 @@
 import { isNumber } from '../helpers'
 import { ITimestamp } from '../types/timestamp'
 
+const getCurrentTimestamp = (): ITimestamp => {
+  const date = new Date()
+
+  return {
+    unix: date.valueOf(),
+    utc: date.toUTCString(),
+  }
+}
 const getTimestampByDate = (dateInput: string): ITimestamp => {
   let dateParam: string | number
   let date: Date
@@ -34,5 +42,6 @@ const getTimestampByDate = (dateInput: string): ITimestamp => {
 }
 
 export default {
+  getCurrentTimestamp,
   getTimestampByDate,
 }
