@@ -3,6 +3,7 @@ import { TimestampController } from '../controllers'
 
 const router = express.Router()
 
-router.get('/', TimestampController.getCurrentTimestamp)
+router.route('/').get(TimestampController.getCurrentTimestamp)
+router.route('/:date').get(TimestampController.getTimestampByDate)
 
 export default router
